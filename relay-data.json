@@ -1,0 +1,167 @@
+{
+  "chargers": [
+    {
+      "id": "CZ-101",
+      "name": "Bandra East Hub",
+      "power": 60,
+      "connector": "CCS2",
+      "status": "AVAILABLE",
+      "health": "Healthy",
+      "lastSeen": 1793344635851
+    },
+    {
+      "id": "CZ-102",
+      "name": "BKC Business Park",
+      "power": 120,
+      "connector": "CCS2",
+      "status": "CHARGING",
+      "health": "Healthy",
+      "lastSeen": 1793344635851
+    },
+    {
+      "id": "CZ-103",
+      "name": "Andheri Link Road",
+      "power": 60,
+      "connector": "CCS2",
+      "status": "OFFLINE",
+      "health": "Unreachable",
+      "lastSeen": 1793351874519
+    },
+    {
+      "id": "CZ-104",
+      "name": "Powai Lake Point",
+      "power": 30,
+      "connector": "CCS2",
+      "status": "FAULTED",
+      "health": "Fault",
+      "lastSeen": 1793344635851
+    },
+    {
+      "id": "CZ-105",
+      "name": "Lower Parel Station",
+      "power": 60,
+      "connector": "CCS2",
+      "status": "AVAILABLE",
+      "health": "Healthy",
+      "lastSeen": 1793344635851
+    },
+    {
+      "id": "CZ-106",
+      "name": "Thane Express Hub",
+      "power": 120,
+      "connector": "CCS2",
+      "status": "OFFLINE",
+      "health": "Unreachable",
+      "lastSeen": 1793344455851
+    }
+  ],
+  "reservations": [
+    {
+      "id": "RES-050554",
+      "userId": "rahul",
+      "userName": "Rahul Sharma",
+      "chargerId": "CZ-101",
+      "status": "RELEASED",
+      "createdAt": 1793352050554,
+      "expiresAt": 1793352950554,
+      "releasedAt": 1793352069254,
+      "releaseReason": "SESSION_RECONCILED"
+    },
+    {
+      "id": "RES-031519",
+      "userId": "rahul",
+      "userName": "Rahul Sharma",
+      "chargerId": "CZ-101",
+      "status": "RELEASED",
+      "createdAt": 1793352031519,
+      "expiresAt": 1793352931519,
+      "releasedAt": 1793352040953,
+      "releaseReason": "CHARGER_START_FAILED"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "SES-040953",
+      "reservationId": "RES-031519",
+      "chargerId": "CZ-101",
+      "status": "ROLLED_BACK",
+      "startedAt": 1793352040953,
+      "endedAt": 1793352040953
+    }
+  ],
+  "payments": [
+    {
+      "id": "PAY-050554",
+      "reservationId": "RES-050554",
+      "amount": 500,
+      "status": "RELEASED",
+      "createdAt": 1793352050554,
+      "releasedAt": 1793352069254
+    },
+    {
+      "id": "PAY-031519",
+      "reservationId": "RES-031519",
+      "amount": 500,
+      "status": "RELEASED",
+      "createdAt": 1793352031519,
+      "releasedAt": 1793352040953
+    }
+  ],
+  "events": [
+    {
+      "id": "0f441416-04fb-4f60-9c11-0d55e4c2db66",
+      "at": 1793352069254,
+      "type": "RECONCILIATION",
+      "message": "Session/payment states reconciled",
+      "detail": "RES-050554 closed · payment hold released"
+    },
+    {
+      "id": "19644703-55d3-4077-bff5-231c6ef1daef",
+      "at": 1793352054519,
+      "type": "CONNECTIVITY",
+      "message": "CZ-103 marked OFFLINE",
+      "detail": "Heartbeat timeout · new bookings blocked"
+    },
+    {
+      "id": "485cd1a5-5e38-4aba-9cb7-019783e25cf8",
+      "at": 1793352050554,
+      "type": "BOOKING",
+      "message": "RES-050554 reserved CZ-101",
+      "detail": "₹500 payment hold placed · 15-minute reservation lease"
+    },
+    {
+      "id": "2c457de2-61e7-4ef6-ab6d-57e4750b3585",
+      "at": 1793352040953,
+      "type": "RECOVERY",
+      "message": "Automatic rollback completed",
+      "detail": "RES-031519 released · ₹500 hold released · retry enabled"
+    },
+    {
+      "id": "10ef52d8-fdf4-4d01-890d-d32011f0e6e8",
+      "at": 1793352040953,
+      "type": "FAULT",
+      "message": "Start command failed at CZ-101",
+      "detail": "Charger did not acknowledge session start · simulating lost/failed start response"
+    },
+    {
+      "id": "933ac20a-ebe4-4e0b-af24-fddfab74fef6",
+      "at": 1793352031520,
+      "type": "BOOKING",
+      "message": "RES-031519 reserved CZ-101",
+      "detail": "₹500 payment hold placed · 15-minute reservation lease"
+    },
+    {
+      "id": "2c4665fe-3b0e-4980-9548-2ba4204eece4",
+      "at": 1793344635851,
+      "type": "SYSTEM",
+      "message": "Relay orchestration service initialized",
+      "detail": "Demo environment · simulated charger network"
+    }
+  ],
+  "metrics": {
+    "attempts": 1,
+    "recovered": 1,
+    "stuckBookings": 0,
+    "stuckPayments": 0
+  }
+}
